@@ -1,0 +1,26 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+  <div class="ui grid" style="margin-top: 3em">
+    <div class="row">
+      <div class="fourteen wide centered column">
+        <div class="ui huge header">
+          Recent SteemDB Updates
+          <div class="sub header">
+            The most recent updates related to SteemDB.com, powered by <a href="https://github.com/greymass/reprint">Reprint</a>.
+          </div>
+        </div>
+        <div class="ui divider"></div>
+        {% for post in posts %}
+          {% include 'partials/post.html.twig' with { post: post, preview: true } %}
+          <div class="ui hidden divider"></div>
+        {% endfor %}
+        {% include 'partials/paginator.html.twig' %}
+      </div>
+      <div class="five wide column">
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
